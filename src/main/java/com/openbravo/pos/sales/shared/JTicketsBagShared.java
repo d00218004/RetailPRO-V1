@@ -322,8 +322,6 @@ public class JTicketsBagShared extends JTicketsBag {
         m_jListTickets.setToolTipText(bundle.getString("tooltip.layaway")); // NOI18N
         m_jListTickets.setFocusPainted(false);
         m_jListTickets.setFocusable(false);
-        m_jListTickets.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        m_jListTickets.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         m_jListTickets.setIconTextGap(1);
         m_jListTickets.setMargin(new java.awt.Insets(0, 2, 0, 2));
         m_jListTickets.setMaximumSize(new java.awt.Dimension(50, 40));

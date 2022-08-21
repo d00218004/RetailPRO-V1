@@ -169,6 +169,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
   public JPanelTicket() {
 
     initComponents();
+
   }
 
   /**
@@ -177,6 +178,9 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
    */
   @Override
   public void init(AppView app) throws BeanFactoryException {
+      
+    j_btnRemotePrt.setVisible(false);
+      jEditAttributes.setVisible(false);
 
     m_config = new AppConfig(new File((System.getProperty("user.home")), AppLocal.APP_ID + ".properties"));
     m_config.load();
@@ -2201,7 +2205,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         if (checkProduct != null) {
 
           if (checkProduct.getUnits() <= 0) {
-            jCheckStock.setForeground(Color.magenta);
+            jCheckStock.setForeground(Color.blue);
           } else {
             jCheckStock.setForeground(Color.darkGray);
           }
@@ -2366,6 +2370,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         btnSplit = new javax.swing.JButton();
         btnReprint1 = new javax.swing.JButton();
         j_btnRemotePrt = new javax.swing.JButton();
+        btnGiftReceipt = new javax.swing.JButton();
         m_jPanelScripts = new javax.swing.JPanel();
         m_jButtonsExt = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -2376,8 +2381,8 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         m_jList = new javax.swing.JButton();
         m_jEditLine = new javax.swing.JButton();
         m_jDelete = new javax.swing.JButton();
-        jEditAttributes = new javax.swing.JButton();
         jCheckStock = new javax.swing.JButton();
+        jEditAttributes = new javax.swing.JButton();
         m_jPanelCentral = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 0), new java.awt.Dimension(5, 32767));
@@ -2419,7 +2424,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
 
         m_jPanelBag.setAutoscrolls(true);
         m_jPanelBag.setMaximumSize(new java.awt.Dimension(10, 10));
-        m_jPanelBag.setPreferredSize(new java.awt.Dimension(0, 70));
+        m_jPanelBag.setPreferredSize(new java.awt.Dimension(0, 68));
 
         jTBtnShow.setFont(new java.awt.Font("Open Sans Condensed ExtraBold", 0, 14)); // NOI18N
         jTBtnShow.setSelected(true);
@@ -2479,7 +2484,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         btnSplit.setEnabled(false);
         btnSplit.setFocusPainted(false);
         btnSplit.setFocusable(false);
-        btnSplit.setMargin(new java.awt.Insets(2, 2, 2, 2));
+        btnSplit.setMargin(new java.awt.Insets(4, 4, 4, 4));
         btnSplit.setMaximumSize(new java.awt.Dimension(50, 40));
         btnSplit.setMinimumSize(new java.awt.Dimension(50, 40));
         btnSplit.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -2497,7 +2502,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         btnReprint1.setToolTipText(bundle.getString("tooltip.reprintLastTicket")); // NOI18N
         btnReprint1.setFocusPainted(false);
         btnReprint1.setFocusable(false);
-        btnReprint1.setMargin(new java.awt.Insets(8, 14, 8, 14));
+        btnReprint1.setMargin(new java.awt.Insets(4, 4, 4, 4));
         btnReprint1.setMaximumSize(new java.awt.Dimension(50, 40));
         btnReprint1.setMinimumSize(new java.awt.Dimension(50, 40));
         btnReprint1.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -2525,6 +2530,25 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
             }
         });
 
+        btnGiftReceipt.setFont(new java.awt.Font("Open Sans Condensed ExtraBold", 0, 14)); // NOI18N
+        btnGiftReceipt.setText("GIFT RECEIPT");
+        btnGiftReceipt.setToolTipText(bundle.getString("tooltip.reprintLastTicket")); // NOI18N
+        btnGiftReceipt.setActionCommand("GIFT RECEIPT");
+        btnGiftReceipt.setFocusPainted(false);
+        btnGiftReceipt.setFocusable(false);
+        btnGiftReceipt.setMargin(new java.awt.Insets(4, 4, 4, 4));
+        btnGiftReceipt.setMaximumSize(new java.awt.Dimension(50, 40));
+        btnGiftReceipt.setMinimumSize(new java.awt.Dimension(50, 40));
+        btnGiftReceipt.setPreferredSize(new java.awt.Dimension(90, 50));
+        btnGiftReceipt.setRequestFocusEnabled(false);
+        btnGiftReceipt.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnGiftReceiptActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout m_jButtonsLayout = new javax.swing.GroupLayout(m_jButtons);
         m_jButtons.setLayout(m_jButtonsLayout);
         m_jButtonsLayout.setHorizontalGroup(
@@ -2533,9 +2557,11 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
                 .addGap(0, 0, 0)
                 .addComponent(btnSplit, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(j_btnRemotePrt, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnReprint1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnGiftReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(j_btnRemotePrt, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         m_jButtonsLayout.setVerticalGroup(
@@ -2545,7 +2571,8 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
                 .addGroup(m_jButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(btnSplit, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(j_btnRemotePrt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReprint1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnReprint1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGiftReceipt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2651,28 +2678,8 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         });
         jPanel2.add(m_jDelete);
 
-        jEditAttributes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jEditAttributes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/attributes.png"))); // NOI18N
-        jEditAttributes.setToolTipText(bundle.getString("tooltip.saleattributes")); // NOI18N
-        jEditAttributes.setFocusPainted(false);
-        jEditAttributes.setFocusable(false);
-        jEditAttributes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jEditAttributes.setMargin(new java.awt.Insets(4, 4, 4, 4));
-        jEditAttributes.setMaximumSize(null);
-        jEditAttributes.setMinimumSize(null);
-        jEditAttributes.setPreferredSize(null);
-        jEditAttributes.setRequestFocusEnabled(false);
-        jEditAttributes.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jEditAttributesActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jEditAttributes);
-
         jCheckStock.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jCheckStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/info.png"))); // NOI18N
+        jCheckStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/stock-check.png"))); // NOI18N
         jCheckStock.setToolTipText(bundle.getString("tooltip.salecheckstock")); // NOI18N
         jCheckStock.setActionCommand("Stock Check");
         jCheckStock.setFocusPainted(false);
@@ -2698,6 +2705,26 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         });
         jPanel2.add(jCheckStock);
 
+        jEditAttributes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jEditAttributes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/attributes.png"))); // NOI18N
+        jEditAttributes.setToolTipText(bundle.getString("tooltip.saleattributes")); // NOI18N
+        jEditAttributes.setFocusPainted(false);
+        jEditAttributes.setFocusable(false);
+        jEditAttributes.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jEditAttributes.setMargin(new java.awt.Insets(4, 4, 4, 4));
+        jEditAttributes.setMaximumSize(null);
+        jEditAttributes.setMinimumSize(null);
+        jEditAttributes.setPreferredSize(null);
+        jEditAttributes.setRequestFocusEnabled(false);
+        jEditAttributes.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jEditAttributesActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jEditAttributes);
+
         jPanel5.add(jPanel2, java.awt.BorderLayout.NORTH);
 
         m_jPanTicket.add(jPanel5, java.awt.BorderLayout.LINE_START);
@@ -2709,9 +2736,9 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         jPanel4.setLayout(new java.awt.BorderLayout());
         jPanel4.add(filler2, java.awt.BorderLayout.LINE_START);
 
-        m_jTicketId.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        m_jTicketId.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jTicketId.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        m_jTicketId.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        m_jTicketId.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         m_jTicketId.setOpaque(true);
         m_jTicketId.setPreferredSize(new java.awt.Dimension(300, 40));
         m_jTicketId.setRequestFocusEnabled(false);
@@ -2721,20 +2748,20 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         m_jPanTotals.setPreferredSize(new java.awt.Dimension(375, 60));
         m_jPanTotals.setLayout(new java.awt.GridLayout(2, 3, 4, 0));
 
-        m_jLblTotalEuros3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        m_jLblTotalEuros3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        m_jLblTotalEuros3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        m_jLblTotalEuros3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jLblTotalEuros3.setLabelFor(m_jSubtotalEuros);
         m_jLblTotalEuros3.setText(AppLocal.getIntString("label.subtotalcash")); // NOI18N
         m_jPanTotals.add(m_jLblTotalEuros3);
 
-        m_jLblTotalEuros2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        m_jLblTotalEuros2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        m_jLblTotalEuros2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        m_jLblTotalEuros2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jLblTotalEuros2.setLabelFor(m_jSubtotalEuros);
         m_jLblTotalEuros2.setText(AppLocal.getIntString("label.taxcash")); // NOI18N
         m_jPanTotals.add(m_jLblTotalEuros2);
 
-        m_jLblTotalEuros1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        m_jLblTotalEuros1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        m_jLblTotalEuros1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        m_jLblTotalEuros1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jLblTotalEuros1.setLabelFor(m_jTotalEuros);
         m_jLblTotalEuros1.setText(AppLocal.getIntString("label.totalcash")); // NOI18N
         m_jPanTotals.add(m_jLblTotalEuros1);
@@ -2742,10 +2769,10 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         m_jSubtotalEuros.setBackground(m_jEditLine.getBackground());
         m_jSubtotalEuros.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         m_jSubtotalEuros.setForeground(m_jEditLine.getForeground());
-        m_jSubtotalEuros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        m_jSubtotalEuros.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jSubtotalEuros.setLabelFor(m_jSubtotalEuros);
         m_jSubtotalEuros.setToolTipText(bundle.getString("tooltip.salesubtotal")); // NOI18N
-        m_jSubtotalEuros.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
+        m_jSubtotalEuros.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
         m_jSubtotalEuros.setMaximumSize(new java.awt.Dimension(125, 25));
         m_jSubtotalEuros.setMinimumSize(new java.awt.Dimension(80, 25));
         m_jSubtotalEuros.setPreferredSize(new java.awt.Dimension(80, 25));
@@ -2755,10 +2782,10 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         m_jTaxesEuros.setBackground(m_jEditLine.getBackground());
         m_jTaxesEuros.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         m_jTaxesEuros.setForeground(m_jEditLine.getForeground());
-        m_jTaxesEuros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        m_jTaxesEuros.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jTaxesEuros.setLabelFor(m_jTaxesEuros);
         m_jTaxesEuros.setToolTipText(bundle.getString("tooltip.saletax")); // NOI18N
-        m_jTaxesEuros.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
+        m_jTaxesEuros.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
         m_jTaxesEuros.setMaximumSize(new java.awt.Dimension(125, 25));
         m_jTaxesEuros.setMinimumSize(new java.awt.Dimension(80, 25));
         m_jTaxesEuros.setPreferredSize(new java.awt.Dimension(80, 25));
@@ -2768,13 +2795,13 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         m_jTotalEuros.setBackground(m_jEditLine.getBackground());
         m_jTotalEuros.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         m_jTotalEuros.setForeground(m_jEditLine.getForeground());
-        m_jTotalEuros.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        m_jTotalEuros.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         m_jTotalEuros.setLabelFor(m_jTotalEuros);
         m_jTotalEuros.setToolTipText(bundle.getString("tooltip.saletotal")); // NOI18N
-        m_jTotalEuros.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 1, true));
+        m_jTotalEuros.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
         m_jTotalEuros.setMaximumSize(new java.awt.Dimension(125, 25));
         m_jTotalEuros.setMinimumSize(new java.awt.Dimension(80, 25));
-        m_jTotalEuros.setPreferredSize(new java.awt.Dimension(100, 25));
+        m_jTotalEuros.setPreferredSize(new java.awt.Dimension(80, 25));
         m_jTotalEuros.setRequestFocusEnabled(false);
         m_jPanTotals.add(m_jTotalEuros);
 
@@ -2820,9 +2847,10 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         });
 
         m_jPrice.setFont(new java.awt.Font("Arial", 1, 16)); // NOI18N
-        m_jPrice.setForeground(new java.awt.Color(76, 197, 237));
+        m_jPrice.setForeground(new java.awt.Color(0, 128, 255));
         m_jPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        m_jPrice.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(76, 197, 237)), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
+        m_jPrice.setToolTipText("");
+        m_jPrice.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 128, 255)), javax.swing.BorderFactory.createEmptyBorder(1, 4, 1, 4)));
         m_jPrice.setOpaque(true);
         m_jPrice.setPreferredSize(new java.awt.Dimension(100, 25));
         m_jPrice.setRequestFocusEnabled(false);
@@ -2877,34 +2905,32 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(m_jPor)
                     .addComponent(m_jKeyFactory, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(m_jaddtax, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(7, 7, 7)
-                        .addComponent(m_jTax, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(m_jPrice, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(5, 5, 5)))
-                .addComponent(m_jEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(m_jEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(m_jaddtax, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                        .addGap(7, 7, 7)
+                        .addComponent(m_jTax, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, 0))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(m_jEnter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(m_jPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(m_jTax, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(m_jaddtax, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                 .addComponent(m_jPor)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(m_jKeyFactory, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(m_jPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(m_jEnter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(m_jaddtax, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(m_jTax, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         m_jPanEntries.add(jPanel9);
@@ -3160,7 +3186,7 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         if (checkProduct != null) {
 
           if (checkProduct.getUnits() <= 0) {
-            jCheckStock.setForeground(Color.magenta);
+            jCheckStock.setForeground(Color.blue);
           } else {
             jCheckStock.setForeground(Color.darkGray);
           }
@@ -3398,7 +3424,13 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
     jPanContainerFocusLost(evt);
   }//GEN-LAST:event_m_jPanContainerFocusLost
 
+    private void btnGiftReceiptActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnGiftReceiptActionPerformed
+    {//GEN-HEADEREND:event_btnGiftReceiptActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGiftReceiptActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGiftReceipt;
     private javax.swing.JButton btnReprint1;
     private javax.swing.JButton btnSplit;
     private javax.swing.JPanel catcontainer;
