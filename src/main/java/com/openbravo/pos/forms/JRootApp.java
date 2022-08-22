@@ -1091,7 +1091,7 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
         });
 
         m_jClose.setBackground(new java.awt.Color(0, 33, 243));
-        m_jClose.setFont(new java.awt.Font("IBM Plex Sans SemiBold", 1, 18)); // NOI18N
+        m_jClose.setFont(new java.awt.Font("Open Sans Condensed ExtraBold", 1, 24)); // NOI18N
         m_jClose.setForeground(new java.awt.Color(255, 255, 255));
         m_jClose.setText(AppLocal.getIntString("button.close")); // NOI18N
         m_jClose.setFocusPainted(false);

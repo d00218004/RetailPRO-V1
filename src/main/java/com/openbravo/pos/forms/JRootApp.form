@@ -378,7 +378,7 @@
                           <Color blue="f3" green="21" red="0" type="rgb"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="IBM Plex Sans SemiBold" size="18" style="1"/>
+                          <Font name="Open Sans Condensed ExtraBold" size="24" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
