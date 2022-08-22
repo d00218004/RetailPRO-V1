@@ -168,7 +168,6 @@ public class JProductFinder extends javax.swing.JDialog {
         jcmdCancel = new javax.swing.JButton();
         jcmdOK = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
-        jImageViewerProduct = new com.openbravo.data.gui.JImageViewerProduct();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle(AppLocal.getIntString("form.productslist")); // NOI18N
@@ -301,17 +300,11 @@ public class JProductFinder extends javax.swing.JDialog {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jImageViewerProduct, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 300, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jImageViewerProduct, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGap(0, 240, Short.MAX_VALUE)
         );
 
         jPanel4.add(jPanel6, java.awt.BorderLayout.CENTER);
@@ -329,9 +322,9 @@ public class JProductFinder extends javax.swing.JDialog {
         if (m_ReturnProduct != null) {
             m_ReturnProduct = (ProductInfoExt) jListProducts.getSelectedValue();
 
-            if (m_ReturnProduct != null) {
-                jImageViewerProduct.setImage(m_ReturnProduct.getImage());
-            }
+//            if (m_ReturnProduct != null) {
+//                jImageViewerProduct.setImage(m_ReturnProduct.getImage());
+//            }
         }
         
     }//GEN-LAST:event_jListProductsMouseClicked
@@ -357,9 +350,9 @@ public class JProductFinder extends javax.swing.JDialog {
         if (m_ReturnProduct != null) {
             m_ReturnProduct = (ProductInfoExt) jListProducts.getSelectedValue();
 
-            if (m_ReturnProduct != null) {
-                jImageViewerProduct.setImage(m_ReturnProduct.getImage());
-            }
+//            if (m_ReturnProduct != null) {
+//                jImageViewerProduct.setImage(m_ReturnProduct.getImage());
+//            }
         }        
         
         jcmdOK.setEnabled(jListProducts.getSelectedValue() != null);
@@ -389,7 +382,6 @@ public class JProductFinder extends javax.swing.JDialog {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton3;
-    private com.openbravo.data.gui.JImageViewerProduct jImageViewerProduct;
     private javax.swing.JList jListProducts;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
