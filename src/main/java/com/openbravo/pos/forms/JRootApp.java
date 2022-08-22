@@ -1046,10 +1046,11 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(filler2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 915, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
             .add(jPanel4Layout.createSequentialGroup()
-                .add(57, 57, 57)
-                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 800, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(filler2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 915, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 800, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(167, 167, 167))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -1119,7 +1120,7 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
             .add(jPanel1Layout.createSequentialGroup()
                 .add(m_txtKeys, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(m_jClose, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 102, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(m_jClose, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1145,8 +1146,8 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
                         .add(m_jLogonName, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(434, 434, 434))
                     .add(jPanel5Layout.createSequentialGroup()
-                        .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 550, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 19, Short.MAX_VALUE)
                         .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
@@ -1167,7 +1168,7 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
 
         webMemoryBar1.setBackground(new java.awt.Color(153, 153, 153));
         webMemoryBar1.setText("");
-        webMemoryBar1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        webMemoryBar1.setFont(new java.awt.Font("Consolas", 0, 11));
         webMemoryBar1.setPreferredSize(new java.awt.Dimension(150, 30));
         webMemoryBar1.setUsedBorderColor(new java.awt.Color(0, 204, 204));
         webMemoryBar1.setUsedFillColor(new java.awt.Color(0, 204, 255));
@@ -1191,7 +1192,7 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
             m_jPanelDownLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(m_jPanelDownLayout.createSequentialGroup()
                 .add(panelTask, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 398, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 953, Short.MAX_VALUE)
                 .add(jPanel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 200, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
         );
         m_jPanelDownLayout.setVerticalGroup(
