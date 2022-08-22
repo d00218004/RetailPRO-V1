@@ -392,7 +392,7 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         });
         jPanel1.add(jcmdCancel);
 
-        jcmdOK.setBackground(new java.awt.Color(0, 171, 102));
+        jcmdOK.setBackground(new java.awt.Color(40, 167, 69));
         jcmdOK.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jcmdOK.setForeground(new java.awt.Color(255, 255, 255));
         jcmdOK.setText(AppLocal.getIntString("button.OK")); // NOI18N

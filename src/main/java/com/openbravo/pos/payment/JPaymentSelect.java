@@ -341,7 +341,7 @@ public abstract class JPaymentSelect extends javax.swing.JDialog
         }
         @Override
         public String getIconKey() {
-            return "/com/openbravo/images/customer.png";
+            return "/com/openbravo/images/club-account.png";
         }
     }
 

@@ -167,9 +167,10 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
    * Creates new form JTicketView
    */
   public JPanelTicket() {
-
+      
     initComponents();
-
+      m_jPanelScripts.setVisible(true);
+      m_jButtonsExt.setVisible(true);
   }
 
   /**
@@ -178,6 +179,8 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
    */
   @Override
   public void init(AppView app) throws BeanFactoryException {
+            m_jPanelScripts.setVisible(true);
+      m_jButtonsExt.setVisible(true);
       
     j_btnRemotePrt.setVisible(false);
       jEditAttributes.setVisible(false);
@@ -893,10 +896,10 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
   private ProductInfoExt getInputProduct() {
     ProductInfoExt oProduct = new ProductInfoExt();
 // Always add Default Prod ID + Add Name to Misc. if empty
-    oProduct.setID("xxx999_999xxx_x9x9x9");
-    oProduct.setReference("xxx999");
-    oProduct.setCode("xxx999");
-    oProduct.setName("***");
+    oProduct.setID("000000_000000_000000");
+    oProduct.setReference("000000");
+    oProduct.setCode("000000");
+    oProduct.setName("MISCELLANEOUS ITEM");
     oProduct.setTaxCategoryID(((TaxCategoryInfo) taxcategoriesmodel
             .getSelectedItem()).getID());
     oProduct.setPriceSell(includeTaxes(oProduct.getTaxCategoryID(), getInputValue()));
@@ -2427,7 +2430,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         m_jPanelBag.setPreferredSize(new java.awt.Dimension(0, 68));
 
         jTBtnShow.setFont(new java.awt.Font("Open Sans Condensed ExtraBold", 0, 14)); // NOI18N
-        jTBtnShow.setSelected(true);
         jTBtnShow.setText("MENU");
         jTBtnShow.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jTBtnShow.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -2533,7 +2535,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         btnGiftReceipt.setFont(new java.awt.Font("Open Sans Condensed ExtraBold", 0, 14)); // NOI18N
         btnGiftReceipt.setText("GIFT RECEIPT");
         btnGiftReceipt.setToolTipText(bundle.getString("tooltip.reprintLastTicket")); // NOI18N
-        btnGiftReceipt.setActionCommand("GIFT RECEIPT");
         btnGiftReceipt.setFocusPainted(false);
         btnGiftReceipt.setFocusable(false);
         btnGiftReceipt.setMargin(new java.awt.Insets(4, 4, 4, 4));
