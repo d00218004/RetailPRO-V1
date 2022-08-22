@@ -191,12 +191,12 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jbtnExecute" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="m_jtxtTaxID" max="32767" attributes="0"/>
                               <Component id="m_jtxtPhone" alignment="0" pref="343" max="32767" attributes="0"/>
                               <Component id="m_jtxtName" alignment="0" max="32767" attributes="0"/>
                               <Component id="m_jtxtPostal" alignment="0" max="32767" attributes="0"/>
                               <Component id="m_jtxtSearchKey" alignment="0" max="32767" attributes="0"/>
                               <Component id="m_jtxtName2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="m_jtxtTaxID" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
