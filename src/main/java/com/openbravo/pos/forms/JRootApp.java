@@ -979,7 +979,7 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
         m_txtKeys = new javax.swing.JTextField();
-        m_jClose = new javax.swing.JButton();
+        shutdown_till = new javax.swing.JButton();
         m_jPanelDown = new javax.swing.JPanel();
         panelTask = new javax.swing.JPanel();
         m_jHost = new javax.swing.JLabel();
@@ -1090,19 +1090,19 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
             }
         });
 
-        m_jClose.setBackground(new java.awt.Color(0, 33, 243));
-        m_jClose.setFont(new java.awt.Font("Open Sans Condensed ExtraBold", 1, 24)); // NOI18N
-        m_jClose.setForeground(new java.awt.Color(255, 255, 255));
-        m_jClose.setText(AppLocal.getIntString("button.close")); // NOI18N
-        m_jClose.setFocusPainted(false);
-        m_jClose.setFocusable(false);
-        m_jClose.setPreferredSize(new java.awt.Dimension(100, 50));
-        m_jClose.setRequestFocusEnabled(false);
-        m_jClose.addActionListener(new java.awt.event.ActionListener()
+        shutdown_till.setBackground(new java.awt.Color(0, 33, 243));
+        shutdown_till.setFont(new java.awt.Font("Open Sans Condensed ExtraBold", 1, 24)); // NOI18N
+        shutdown_till.setForeground(new java.awt.Color(255, 255, 255));
+        shutdown_till.setText("SHUTDOWN TILL");
+        shutdown_till.setFocusPainted(false);
+        shutdown_till.setFocusable(false);
+        shutdown_till.setPreferredSize(new java.awt.Dimension(100, 50));
+        shutdown_till.setRequestFocusEnabled(false);
+        shutdown_till.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                m_jCloseActionPerformed(evt);
+                shutdown_tillActionPerformed(evt);
             }
         });
 
@@ -1113,14 +1113,14 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
             .add(jPanel1Layout.createSequentialGroup()
                 .add(m_txtKeys, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(282, Short.MAX_VALUE))
-            .add(m_jClose, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(shutdown_till, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel1Layout.createSequentialGroup()
                 .add(m_txtKeys, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(m_jClose, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
+                .add(shutdown_till, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1192,7 +1192,7 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
             m_jPanelDownLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(m_jPanelDownLayout.createSequentialGroup()
                 .add(panelTask, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 953, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 969, Short.MAX_VALUE)
                 .add(jPanel3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 200, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
         );
         m_jPanelDownLayout.setVerticalGroup(
@@ -1217,9 +1217,9 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
 
   }//GEN-LAST:event_m_txtKeysKeyTyped
 
-  private void m_jCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jCloseActionPerformed
+  private void shutdown_tillActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shutdown_tillActionPerformed
     tryToClose();
-  }//GEN-LAST:event_m_jCloseActionPerformed
+  }//GEN-LAST:event_shutdown_tillActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1233,7 +1233,6 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton m_jClose;
     private javax.swing.JLabel m_jHost;
     private javax.swing.JLabel m_jLblTitle;
     private javax.swing.JPanel m_jLogonName;
@@ -1245,6 +1244,7 @@ public class JRootApp extends JPanel implements AppView, DeviceMonitorEventListe
     private javax.swing.JPanel panelTask;
     private javax.swing.JLabel poweredby;
     private com.alee.laf.progressbar.WebProgressBar serverMonitor;
+    private javax.swing.JButton shutdown_till;
     private com.alee.extended.statusbar.WebMemoryBar webMemoryBar1;
     // End of variables declaration//GEN-END:variables
 }

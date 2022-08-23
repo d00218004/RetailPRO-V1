@@ -464,7 +464,7 @@ public class JDialogNewCustomer extends javax.swing.JDialog {
         });
         jPanel2.add(m_jBtnCancel);
 
-        m_jBtnOK.setBackground(new java.awt.Color(0, 171, 102));
+        m_jBtnOK.setBackground(new java.awt.Color(40, 167, 69));
         m_jBtnOK.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jBtnOK.setForeground(new java.awt.Color(255, 255, 255));
         m_jBtnOK.setText(AppLocal.getIntString("Button.OK")); // NOI18N

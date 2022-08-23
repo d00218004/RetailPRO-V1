@@ -208,6 +208,7 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
             }
         });
         jPanel3.add(m_jButtonCancel);
+        m_jButtonCancel.getAccessibleContext().setAccessibleName("");
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.SOUTH);
 

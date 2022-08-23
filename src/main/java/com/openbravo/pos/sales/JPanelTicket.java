@@ -3428,6 +3428,40 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
     private void btnGiftReceiptActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnGiftReceiptActionPerformed
     {//GEN-HEADEREND:event_btnGiftReceiptActionPerformed
         // TODO add your handling code here:
+         if (m_config.getProperty("lastticket.number") != null)
+                {
+                try
+                    {
+                    TicketInfo ticket = dlSales.loadTicket(
+                            Integer.parseInt((m_config.getProperty("lastticket.type"))),
+                            Integer.parseInt((m_config.getProperty("lastticket.number"))));
+                    if (ticket == null)
+                        {
+                        JFrame frame = new JFrame();
+                        JOptionPane.showMessageDialog(frame,
+                                AppLocal.getIntString("message.notexiststicket"),
+                                AppLocal.getIntString("message.notexiststickettitle"),
+                                JOptionPane.WARNING_MESSAGE);
+                        } else
+                        {
+                        m_ticket = ticket;
+                        m_ticketCopy = null;
+                        try
+                            {
+                            taxeslogic.calculateTaxes(m_ticket);
+                            TicketTaxInfo[] taxlist = m_ticket.getTaxLines();
+                            } catch (TaxesException ex)
+                            {
+                            }
+                        printTicket("Printer.GiftReceipt", m_ticket, null);
+                        Notify("'Printed'");
+                        }
+                    } catch (BasicException e)
+                    {
+                    MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotloadticket"), e);
+                    msg.show(this);
+                    }
+                }
     }//GEN-LAST:event_btnGiftReceiptActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
