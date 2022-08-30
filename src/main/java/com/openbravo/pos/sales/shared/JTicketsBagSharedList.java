@@ -198,7 +198,7 @@ public class JTicketsBagSharedList extends javax.swing.JDialog {
         m_jButtonCancel.setFocusPainted(false);
         m_jButtonCancel.setFocusable(false);
         m_jButtonCancel.setMargin(new java.awt.Insets(8, 16, 8, 16));
-        m_jButtonCancel.setPreferredSize(new java.awt.Dimension(110, 45));
+        m_jButtonCancel.setPreferredSize(new java.awt.Dimension(140, 45));
         m_jButtonCancel.setRequestFocusEnabled(false);
         m_jButtonCancel.addActionListener(new java.awt.event.ActionListener()
         {

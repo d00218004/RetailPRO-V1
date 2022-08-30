@@ -82,8 +82,8 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="m_jVip" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="112" max="32767" attributes="0"/>
-                          <Component id="jLblDiscount" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="37" max="32767" attributes="0"/>
+                          <Component id="jLblDiscount" min="-2" pref="130" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="txtDiscount" min="-2" pref="89" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
@@ -535,7 +535,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Open Sans Condensed ExtraBold" size="18" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Book Number should be in the format &#xa;BOOK NUMBER / BOOK PAGE &#xa;Example: 23/900"/>
+                <Property name="text" type="java.lang.String" value="Search Key should be in the format &#xa;     BOOK NUMBER / BOOK PAGE  &#xa;           Example: 23/900"/>
               </Properties>
             </Component>
           </SubComponents>

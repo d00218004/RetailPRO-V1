@@ -608,8 +608,8 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
       }
     } else {
       if (m_oTicket.getTicketType() == TicketInfo.RECEIPT_REFUND) {
-        m_jEditLine.setVisible(false);
-        m_jList.setVisible(false);
+        m_jEditLine.setVisible(true);
+        m_jList.setVisible(true);
       }
 
       m_oTicket.getLines().forEach((line) -> {
