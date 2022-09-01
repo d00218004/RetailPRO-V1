@@ -347,7 +347,7 @@
                               <Component id="m_txtKeys" min="-2" max="-2" attributes="0"/>
                               <EmptySpace pref="282" max="32767" attributes="0"/>
                           </Group>
-                          <Component id="m_jClose" alignment="0" max="32767" attributes="0"/>
+                          <Component id="shutdown_till" alignment="0" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -355,7 +355,7 @@
                           <Group type="102" attributes="0">
                               <Component id="m_txtKeys" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="m_jClose" pref="102" max="32767" attributes="0"/>
+                              <Component id="shutdown_till" pref="102" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -372,19 +372,19 @@
                         <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="m_txtKeysKeyTyped"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JButton" name="m_jClose">
+                    <Component class="javax.swing.JButton" name="shutdown_till">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="f3" green="21" red="0" type="rgb"/>
                         </Property>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="IBM Plex Sans SemiBold" size="18" style="1"/>
+                          <Font name="Open Sans Condensed ExtraBold" size="24" style="1"/>
                         </Property>
                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
-                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
-                          <ResourceString bundle="pos_messages.properties" key="button.close" replaceFormat="AppLocal.getIntString(&quot;{key}&quot;)"/>
+                        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                          <Connection code="&quot;SHUTDOWN TILL&quot;" type="code"/>
                         </Property>
                         <Property name="focusPainted" type="boolean" value="false"/>
                         <Property name="focusable" type="boolean" value="false"/>
@@ -394,7 +394,7 @@
                         <Property name="requestFocusEnabled" type="boolean" value="false"/>
                       </Properties>
                       <Events>
-                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="m_jCloseActionPerformed"/>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="shutdown_tillActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -429,7 +429,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Component id="panelTask" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="953" max="32767" attributes="0"/>
+                  <EmptySpace pref="969" max="32767" attributes="0"/>
                   <Component id="jPanel3" min="-2" pref="200" max="-2" attributes="0"/>
               </Group>
           </Group>

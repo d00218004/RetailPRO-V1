@@ -167,9 +167,10 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
    * Creates new form JTicketView
    */
   public JPanelTicket() {
-
+      
     initComponents();
-
+      m_jPanelScripts.setVisible(true);
+      m_jButtonsExt.setVisible(true);
   }
 
   /**
@@ -178,6 +179,8 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
    */
   @Override
   public void init(AppView app) throws BeanFactoryException {
+            m_jPanelScripts.setVisible(true);
+      m_jButtonsExt.setVisible(true);
       
     j_btnRemotePrt.setVisible(false);
       jEditAttributes.setVisible(false);
@@ -605,8 +608,8 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
       }
     } else {
       if (m_oTicket.getTicketType() == TicketInfo.RECEIPT_REFUND) {
-        m_jEditLine.setVisible(false);
-        m_jList.setVisible(false);
+        m_jEditLine.setVisible(true);
+        m_jList.setVisible(true);
       }
 
       m_oTicket.getLines().forEach((line) -> {
@@ -893,10 +896,10 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
   private ProductInfoExt getInputProduct() {
     ProductInfoExt oProduct = new ProductInfoExt();
 // Always add Default Prod ID + Add Name to Misc. if empty
-    oProduct.setID("xxx999_999xxx_x9x9x9");
-    oProduct.setReference("xxx999");
-    oProduct.setCode("xxx999");
-    oProduct.setName("***");
+    oProduct.setID("000000_000000_000000");
+    oProduct.setReference("000000");
+    oProduct.setCode("000000");
+    oProduct.setName("MISCELLANEOUS ITEM");
     oProduct.setTaxCategoryID(((TaxCategoryInfo) taxcategoriesmodel
             .getSelectedItem()).getID());
     oProduct.setPriceSell(includeTaxes(oProduct.getTaxCategoryID(), getInputValue()));
@@ -2427,7 +2430,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         m_jPanelBag.setPreferredSize(new java.awt.Dimension(0, 68));
 
         jTBtnShow.setFont(new java.awt.Font("Open Sans Condensed ExtraBold", 0, 14)); // NOI18N
-        jTBtnShow.setSelected(true);
         jTBtnShow.setText("MENU");
         jTBtnShow.setMargin(new java.awt.Insets(2, 2, 2, 2));
         jTBtnShow.setPreferredSize(new java.awt.Dimension(90, 50));
@@ -2533,7 +2535,6 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
         btnGiftReceipt.setFont(new java.awt.Font("Open Sans Condensed ExtraBold", 0, 14)); // NOI18N
         btnGiftReceipt.setText("GIFT RECEIPT");
         btnGiftReceipt.setToolTipText(bundle.getString("tooltip.reprintLastTicket")); // NOI18N
-        btnGiftReceipt.setActionCommand("GIFT RECEIPT");
         btnGiftReceipt.setFocusPainted(false);
         btnGiftReceipt.setFocusable(false);
         btnGiftReceipt.setMargin(new java.awt.Insets(4, 4, 4, 4));
@@ -3427,6 +3428,40 @@ public abstract class JPanelTicket extends JPanel implements JPanelView, BeanFac
     private void btnGiftReceiptActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnGiftReceiptActionPerformed
     {//GEN-HEADEREND:event_btnGiftReceiptActionPerformed
         // TODO add your handling code here:
+         if (m_config.getProperty("lastticket.number") != null)
+                {
+                try
+                    {
+                    TicketInfo ticket = dlSales.loadTicket(
+                            Integer.parseInt((m_config.getProperty("lastticket.type"))),
+                            Integer.parseInt((m_config.getProperty("lastticket.number"))));
+                    if (ticket == null)
+                        {
+                        JFrame frame = new JFrame();
+                        JOptionPane.showMessageDialog(frame,
+                                AppLocal.getIntString("message.notexiststicket"),
+                                AppLocal.getIntString("message.notexiststickettitle"),
+                                JOptionPane.WARNING_MESSAGE);
+                        } else
+                        {
+                        m_ticket = ticket;
+                        m_ticketCopy = null;
+                        try
+                            {
+                            taxeslogic.calculateTaxes(m_ticket);
+                            TicketTaxInfo[] taxlist = m_ticket.getTaxLines();
+                            } catch (TaxesException ex)
+                            {
+                            }
+                        printTicket("Printer.GiftReceipt", m_ticket, null);
+                        Notify("'Printed'");
+                        }
+                    } catch (BasicException e)
+                    {
+                    MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotloadticket"), e);
+                    msg.show(this);
+                    }
+                }
     }//GEN-LAST:event_btnGiftReceiptActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

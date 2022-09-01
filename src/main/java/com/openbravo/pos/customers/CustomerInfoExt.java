@@ -141,7 +141,8 @@ public class CustomerInfoExt extends CustomerInfo {
         return maxdebt;
     }
     public void setMaxdebt(Double maxdebt) {
-        this.maxdebt = maxdebt;
+        //this.maxdebt = maxdebt;
+        this.maxdebt = 5000.00;
     }
     public String printMaxDebt() {
         return Formats.CURRENCY.formatValue(RoundUtils.getValue(getMaxdebt()));
