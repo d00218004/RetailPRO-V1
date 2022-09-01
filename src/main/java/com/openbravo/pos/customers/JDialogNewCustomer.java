@@ -52,6 +52,7 @@ public class JDialogNewCustomer extends javax.swing.JDialog {
             tcustomers = dlCustomer.getTableCustomers();
 
             initComponents();        
+            m_jSearchkey.setEnabled(true);
 
             m_CategoryModel = new ComboBoxValModel();
             List a = m_sentcat.list();
@@ -112,7 +113,7 @@ public class JDialogNewCustomer extends javax.swing.JDialog {
         Window window = getWindow(parent);
         
         JDialogNewCustomer quicknewcustomer;        
-        
+
         if (window instanceof Frame) { 
             quicknewcustomer = new JDialogNewCustomer((Frame) window);
         } else {
@@ -270,7 +271,7 @@ public class JDialogNewCustomer extends javax.swing.JDialog {
         txtPhone.setPreferredSize(new java.awt.Dimension(300, 30));
 
         address1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        address1.setText("Adress Line 1");
+        address1.setText("Address Line 1");
         address1.setPreferredSize(new java.awt.Dimension(150, 30));
 
         txtAddress1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -559,7 +560,7 @@ public class JDialogNewCustomer extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(m_jBtnOK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(m_jBtnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25))

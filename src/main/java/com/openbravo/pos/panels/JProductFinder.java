@@ -158,16 +158,16 @@ public class JProductFinder extends javax.swing.JDialog {
         jPanel2 = new javax.swing.JPanel();
         m_jProductSelect = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
+        searchBtn = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListProducts = new javax.swing.JList();
         jPanel4 = new javax.swing.JPanel();
-        m_jKeys = new com.openbravo.editor.JEditorKeys();
         jPanel1 = new javax.swing.JPanel();
         jcmdCancel = new javax.swing.JButton();
         jcmdOK = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
+        m_jKeys = new com.openbravo.editor.JEditorKeys();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle(AppLocal.getIntString("form.productslist")); // NOI18N
@@ -178,18 +178,18 @@ public class JProductFinder extends javax.swing.JDialog {
 
         m_jProductSelect.setLayout(new java.awt.BorderLayout());
 
-        jButton3.setBackground(new java.awt.Color(0, 128, 255));
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText(AppLocal.getIntString("button.executefilter")); // NOI18N
-        jButton3.setToolTipText("Execute Filter");
-        jButton3.setBorderPainted(false);
-        jButton3.setPreferredSize(new java.awt.Dimension(150, 45));
-        jButton3.addActionListener(new java.awt.event.ActionListener()
+        searchBtn.setBackground(new java.awt.Color(0, 128, 255));
+        searchBtn.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        searchBtn.setForeground(new java.awt.Color(255, 255, 255));
+        searchBtn.setText(AppLocal.getIntString("button.executefilter")); // NOI18N
+        searchBtn.setToolTipText("Execute Filter");
+        searchBtn.setBorderPainted(false);
+        searchBtn.setPreferredSize(new java.awt.Dimension(120, 45));
+        searchBtn.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                jButton3ActionPerformed(evt);
+                searchBtnActionPerformed(evt);
             }
         });
 
@@ -198,15 +198,15 @@ public class JProductFinder extends javax.swing.JDialog {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(140, 140, 140)
+                .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(190, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(searchBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         m_jProductSelect.add(jPanel3, java.awt.BorderLayout.SOUTH);
@@ -248,16 +248,6 @@ public class JProductFinder extends javax.swing.JDialog {
         jPanel4.setPreferredSize(new java.awt.Dimension(300, 0));
         jPanel4.setLayout(new java.awt.BorderLayout());
 
-        m_jKeys.setPreferredSize(new java.awt.Dimension(290, 300));
-        m_jKeys.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                m_jKeysActionPerformed(evt);
-            }
-        });
-        jPanel4.add(m_jKeys, java.awt.BorderLayout.NORTH);
-
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         jcmdCancel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -296,15 +286,26 @@ public class JProductFinder extends javax.swing.JDialog {
 
         jPanel4.add(jPanel1, java.awt.BorderLayout.PAGE_END);
 
+        m_jKeys.setPreferredSize(new java.awt.Dimension(290, 300));
+        m_jKeys.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                m_jKeysActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(m_jKeys, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 240, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(m_jKeys, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jPanel4.add(jPanel6, java.awt.BorderLayout.CENTER);
@@ -363,8 +364,8 @@ public class JProductFinder extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_m_jKeysActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton3ActionPerformed
-    {//GEN-HEADEREND:event_jButton3ActionPerformed
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_searchBtnActionPerformed
+    {//GEN-HEADEREND:event_searchBtnActionPerformed
 
         try
         {
@@ -377,12 +378,11 @@ public class JProductFinder extends javax.swing.JDialog {
         {
         }
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_searchBtnActionPerformed
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton3;
-    private javax.swing.JList jListProducts;
+    public javax.swing.JList jListProducts;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -394,6 +394,7 @@ public class JProductFinder extends javax.swing.JDialog {
     private javax.swing.JButton jcmdOK;
     private com.openbravo.editor.JEditorKeys m_jKeys;
     private javax.swing.JPanel m_jProductSelect;
+    private javax.swing.JButton searchBtn;
     // End of variables declaration//GEN-END:variables
     
 }
