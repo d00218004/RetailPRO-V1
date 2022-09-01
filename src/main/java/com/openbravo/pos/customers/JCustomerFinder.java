@@ -145,8 +145,6 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         getRootPane().setDefaultButton(jcmdOK);
 
         m_ReturnCustomer = null;
-        m_jKeys.setCustomerFinder(this);
-
     }
 
     /**
@@ -232,7 +230,7 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
      */
     @Override
     public Object createValue() throws BasicException {
-
+        
         Object[] afilter = new Object[12];
         
         // TaxID
@@ -335,9 +333,8 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
 
         textField1 = new java.awt.TextField();
         jPanel2 = new javax.swing.JPanel();
-        m_jKeys = new com.openbravo.editor.JEditorKeys();
-        jPanel8 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jListCustomers = new javax.swing.JList();
         jcmdCancel = new javax.swing.JButton();
         jcmdOK = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -358,8 +355,6 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         emailAddress = new javax.swing.JTextField();
         reset = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jListCustomers = new javax.swing.JList();
         jPanel6 = new javax.swing.JPanel();
 
         textField1.setText("textField1");
@@ -370,8 +365,28 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         setPreferredSize(new java.awt.Dimension(750, 600));
 
         jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanel2.setPreferredSize(new java.awt.Dimension(350, 400));
 
-        jPanel8.setLayout(new java.awt.BorderLayout());
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(400, 147));
+
+        jListCustomers.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jListCustomers.setFocusable(false);
+        jListCustomers.setRequestFocusEnabled(false);
+        jListCustomers.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                jListCustomersMouseClicked(evt);
+            }
+        });
+        jListCustomers.addListSelectionListener(new javax.swing.event.ListSelectionListener()
+        {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt)
+            {
+                jListCustomersValueChanged(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jListCustomers);
 
         jcmdCancel.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jcmdCancel.setText(AppLocal.getIntString("button.Cancel")); // NOI18N
@@ -387,7 +402,6 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
                 jcmdCancelActionPerformed(evt);
             }
         });
-        jPanel1.add(jcmdCancel);
 
         jcmdOK.setBackground(new java.awt.Color(40, 167, 69));
         jcmdOK.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -409,32 +423,36 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
                 jcmdOKActionPerformed(evt);
             }
         });
-        jPanel1.add(jcmdOK);
-
-        jPanel8.add(jPanel1, java.awt.BorderLayout.LINE_END);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(m_jKeys, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jcmdCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jcmdOK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(m_jKeys, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(240, 240, 240)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 528, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jcmdOK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jcmdCancel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.LINE_END);
 
         jPanel3.setPreferredSize(new java.awt.Dimension(450, 0));
-        jPanel3.setLayout(new java.awt.BorderLayout());
 
         jPanel5.setLayout(new java.awt.BorderLayout());
 
@@ -488,17 +506,22 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
             }
         });
 
-        accountID.setMinimumSize(null);
+        accountID.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         accountID.setPreferredSize(new java.awt.Dimension(300, 30));
 
+        searchKey.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         searchKey.setPreferredSize(new java.awt.Dimension(300, 30));
 
+        address.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         address.setPreferredSize(new java.awt.Dimension(300, 30));
 
+        name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         name.setPreferredSize(new java.awt.Dimension(300, 30));
 
+        phoneNumber.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         phoneNumber.setPreferredSize(new java.awt.Dimension(300, 30));
 
+        emailAddress.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         emailAddress.setPreferredSize(new java.awt.Dimension(300, 30));
 
         reset.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -521,7 +544,7 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(15, 15, 15)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -540,11 +563,11 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
                             .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(phoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                         .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -565,7 +588,7 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
                             .addComponent(address, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3))
+                        .addGap(0, 0, 0))
                     .addComponent(jLblName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -575,11 +598,11 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(emailAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reset, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         search.getAccessibleContext().setAccessibleName("");
@@ -588,34 +611,8 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
 
         jPanel5.add(jPanel7, java.awt.BorderLayout.CENTER);
 
-        jPanel3.add(jPanel5, java.awt.BorderLayout.PAGE_START);
-
         jPanel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
         jPanel4.setPreferredSize(new java.awt.Dimension(450, 140));
-        jPanel4.setLayout(new java.awt.BorderLayout());
-
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(400, 147));
-
-        jListCustomers.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jListCustomers.setFocusable(false);
-        jListCustomers.setRequestFocusEnabled(false);
-        jListCustomers.addMouseListener(new java.awt.event.MouseAdapter()
-        {
-            public void mouseClicked(java.awt.event.MouseEvent evt)
-            {
-                jListCustomersMouseClicked(evt);
-            }
-        });
-        jListCustomers.addListSelectionListener(new javax.swing.event.ListSelectionListener()
-        {
-            public void valueChanged(javax.swing.event.ListSelectionEvent evt)
-            {
-                jListCustomersValueChanged(evt);
-            }
-        });
-        jScrollPane1.setViewportView(jListCustomers);
-
-        jPanel4.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         jPanel6.setPreferredSize(new java.awt.Dimension(432, 0));
 
@@ -623,20 +620,47 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 422, Short.MAX_VALUE)
+            .addGap(0, 438, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jPanel4.add(jPanel6, java.awt.BorderLayout.PAGE_START);
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(199, Short.MAX_VALUE))
+        );
 
-        jPanel3.add(jPanel4, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2))
+            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         getContentPane().add(jPanel3, java.awt.BorderLayout.CENTER);
 
-        setSize(new java.awt.Dimension(758, 634));
+        setSize(new java.awt.Dimension(816, 639));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
     private void jcmdOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcmdOKActionPerformed
@@ -714,18 +738,15 @@ public class JCustomerFinder extends javax.swing.JDialog implements EditorCreato
     private javax.swing.JLabel jLblSearchKey;
     private javax.swing.JLabel jLblTaxID;
     private javax.swing.JList jListCustomers;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jcmdCancel;
     private javax.swing.JButton jcmdOK;
-    private com.openbravo.editor.JEditorKeys m_jKeys;
     private javax.swing.JTextField name;
     private javax.swing.JTextField phoneNumber;
     private javax.swing.JButton reset;
