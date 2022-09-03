@@ -81,7 +81,6 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         m_ReasonModel = new ComboBoxValModel();
         m_ReasonModel.add(AppLocal.getIntString("cboption.preview"));
         m_ReasonModel.add(AppLocal.getIntString("cboption.reprint"));               
-        jCBCloseCash.setModel(m_ReasonModel);                
     }
     
     /**
@@ -428,7 +427,6 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jLabel6 = new javax.swing.JLabel();
         m_jCloseCash = new javax.swing.JButton();
         m_jPrintCash = new javax.swing.JButton();
-        jCBCloseCash = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
@@ -440,7 +438,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jLabel11.setPreferredSize(new java.awt.Dimension(125, 30));
 
         m_jSequence.setEditable(false);
-        m_jSequence.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jSequence.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jSequence.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jSequence.setPreferredSize(new java.awt.Dimension(150, 30));
 
@@ -450,7 +448,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jLabel2.setPreferredSize(new java.awt.Dimension(125, 30));
 
         m_jMinDate.setEditable(false);
-        m_jMinDate.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jMinDate.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jMinDate.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jMinDate.setPreferredSize(new java.awt.Dimension(150, 30));
 
@@ -459,7 +457,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jLabel3.setText(AppLocal.getIntString("label.EndDate")); // NOI18N
         jLabel3.setPreferredSize(new java.awt.Dimension(125, 30));
 
-        m_jMaxDate.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jMaxDate.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jMaxDate.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jMaxDate.setEnabled(false);
         m_jMaxDate.setPreferredSize(new java.awt.Dimension(200, 30));
@@ -469,7 +467,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jLabel5.setPreferredSize(new java.awt.Dimension(150, 30));
 
         m_jCash.setEditable(false);
-        m_jCash.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jCash.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jCash.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jCash.setPreferredSize(new java.awt.Dimension(200, 30));
         m_jCash.addActionListener(new java.awt.event.ActionListener()
@@ -485,12 +483,12 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jLabel4.setPreferredSize(new java.awt.Dimension(150, 30));
 
         m_jCount.setEditable(false);
-        m_jCount.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jCount.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jCount.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jCount.setPreferredSize(new java.awt.Dimension(200, 30));
 
         m_jLinesRemoved.setEditable(false);
-        m_jLinesRemoved.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jLinesRemoved.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jLinesRemoved.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jLinesRemoved.setPreferredSize(new java.awt.Dimension(200, 30));
 
@@ -527,7 +525,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jLabel9.setPreferredSize(new java.awt.Dimension(150, 30));
 
         m_jNoCashSales.setEditable(false);
-        m_jNoCashSales.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jNoCashSales.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jNoCashSales.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jNoCashSales.setPreferredSize(new java.awt.Dimension(200, 30));
 
@@ -537,7 +535,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jLabel8.setPreferredSize(new java.awt.Dimension(150, 30));
 
         m_jSalesTotal.setEditable(false);
-        m_jSalesTotal.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jSalesTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jSalesTotal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jSalesTotal.setPreferredSize(new java.awt.Dimension(200, 30));
 
@@ -550,7 +548,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jLabel12.setPreferredSize(new java.awt.Dimension(150, 30));
 
         m_jSalesTaxes.setEditable(false);
-        m_jSalesTaxes.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jSalesTaxes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jSalesTaxes.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jSalesTaxes.setPreferredSize(new java.awt.Dimension(200, 30));
 
@@ -567,12 +565,12 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         m_jScrollSales.setViewportView(m_jsalestable);
 
         m_jSales.setEditable(false);
-        m_jSales.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jSales.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jSales.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jSales.setPreferredSize(new java.awt.Dimension(200, 30));
 
         m_jSalesSubtotal.setEditable(false);
-        m_jSalesSubtotal.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jSalesSubtotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jSalesSubtotal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jSalesSubtotal.setPreferredSize(new java.awt.Dimension(200, 30));
 
@@ -580,7 +578,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jLabel6.setText(AppLocal.getIntString("label.totalnet")); // NOI18N
         jLabel6.setPreferredSize(new java.awt.Dimension(150, 30));
 
-        m_jCloseCash.setBackground(new java.awt.Color(0, 128, 255));
+        m_jCloseCash.setBackground(new java.awt.Color(40, 167, 69));
         m_jCloseCash.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jCloseCash.setForeground(new java.awt.Color(255, 255, 255));
         m_jCloseCash.setText(AppLocal.getIntString("button.closecash")); // NOI18N
@@ -588,9 +586,10 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         m_jCloseCash.setBorderPainted(false);
         m_jCloseCash.setIconTextGap(2);
         m_jCloseCash.setInheritsPopupMenu(true);
+        m_jCloseCash.setMargin(new java.awt.Insets(4, 4, 4, 4));
         m_jCloseCash.setMaximumSize(new java.awt.Dimension(85, 33));
         m_jCloseCash.setMinimumSize(new java.awt.Dimension(85, 33));
-        m_jCloseCash.setPreferredSize(new java.awt.Dimension(145, 45));
+        m_jCloseCash.setPreferredSize(new java.awt.Dimension(80, 45));
         m_jCloseCash.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -600,12 +599,13 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         });
 
         m_jPrintCash.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        m_jPrintCash.setText(AppLocal.getIntString("button.printcash")); // NOI18N
+        m_jPrintCash.setText("<html><center>XRead\nPreview</center></html>");
         m_jPrintCash.setToolTipText(bundle.getString("tooltip.btn.partialcash")); // NOI18N
         m_jPrintCash.setIconTextGap(2);
+        m_jPrintCash.setMargin(new java.awt.Insets(4, 4, 4, 4));
         m_jPrintCash.setMaximumSize(new java.awt.Dimension(85, 33));
         m_jPrintCash.setMinimumSize(new java.awt.Dimension(85, 33));
-        m_jPrintCash.setPreferredSize(new java.awt.Dimension(145, 45));
+        m_jPrintCash.setPreferredSize(new java.awt.Dimension(80, 45));
         m_jPrintCash.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -614,20 +614,11 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
             }
         });
 
-        jCBCloseCash.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jCBCloseCash.setToolTipText(AppLocal.getIntString("tooltip.closecashactions")); // NOI18N
-        jCBCloseCash.setPreferredSize(new java.awt.Dimension(200, 30));
-        jCBCloseCash.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                jCBCloseCashActionPerformed(evt);
-            }
-        });
-
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton1.setText("ZRead Lookup");
-        jButton1.setPreferredSize(new java.awt.Dimension(145, 45));
+        jButton1.setText("<html><center>ZRead\nLookup</center></html>");
+        jButton1.setActionCommand("<html>ZRead\nLookup</html>");
+        jButton1.setMargin(new java.awt.Insets(4, 4, 4, 4));
+        jButton1.setPreferredSize(new java.awt.Dimension(80, 45));
         jButton1.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -641,7 +632,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -684,9 +675,7 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(m_jNoCashSales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jCBCloseCash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(m_jNoCashSales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -697,7 +686,12 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(m_jCloseCash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(m_jPrintCash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(m_jSequence, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -709,13 +703,8 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(m_jScrollTableTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
-                        .addComponent(m_jScrollSales, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(m_jPrintCash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(m_jCloseCash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(m_jScrollSales, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -767,10 +756,8 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
                         .addGap(11, 11, 11)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(m_jNoCashSales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(11, 11, 11)
-                        .addComponent(jCBCloseCash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(8, 11, Short.MAX_VALUE))
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -868,15 +855,6 @@ public class JPanelCloseMoney extends JPanel implements JPanelView, BeanFactoryA
 
     }//GEN-LAST:event_m_jPrintCashActionPerformed
 
-    private void jCBCloseCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBCloseCashActionPerformed
-//        if(jCBCloseCash.getSelectedIndex() == 0){
-//            printPayments("Printer.CloseCash.Preview");  
-//        }
-//        if(jCBCloseCash.getSelectedIndex() == 1) {
-//            m_App.getAppUserView().showTask("com.openbravo.pos.panels.JPanelCloseMoneyReprint");
-//        }  
-    }//GEN-LAST:event_jCBCloseCashActionPerformed
-
     private void m_jCashActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_m_jCashActionPerformed
     {//GEN-HEADEREND:event_m_jCashActionPerformed
         // TODO add your handling code here:
@@ -892,7 +870,6 @@ m_App.getAppUserView().showTask("com.openbravo.pos.panels.JPanelCloseMoneyReprin
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jCBCloseCash;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

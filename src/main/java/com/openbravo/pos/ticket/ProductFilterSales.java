@@ -196,7 +196,7 @@ public class ProductFilterSales extends javax.swing.JPanel implements EditorCrea
         jLabel2.setPreferredSize(new java.awt.Dimension(120, 30));
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 84, -1, -1));
 
-        m_jCategory.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jCategory.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jCategory.setPreferredSize(new java.awt.Dimension(250, 30));
         add(m_jCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 84, 300, -1));
 
@@ -205,7 +205,7 @@ public class ProductFilterSales extends javax.swing.JPanel implements EditorCrea
         jLabel4.setPreferredSize(new java.awt.Dimension(120, 30));
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
-        m_jCboPriceBuy.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jCboPriceBuy.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jCboPriceBuy.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -215,21 +215,21 @@ public class ProductFilterSales extends javax.swing.JPanel implements EditorCrea
         });
         add(m_jCboPriceBuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 150, 30));
 
-        m_jPriceBuy.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jPriceBuy.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jPriceBuy.setPreferredSize(null);
-        add(m_jPriceBuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 172, 30));
+        add(m_jPriceBuy, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 140, 30));
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setText(AppLocal.getIntString("label.prodpricesell")); // NOI18N
         jLabel3.setPreferredSize(new java.awt.Dimension(120, 30));
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 156, -1, -1));
 
-        m_jCboPriceSell.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jCboPriceSell.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         add(m_jCboPriceSell, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 156, 150, 30));
 
-        m_jPriceSell.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jPriceSell.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jPriceSell.setPreferredSize(null);
-        add(m_jPriceSell, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 156, 172, 30));
+        add(m_jPriceSell, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 156, 140, 30));
 
         jLabel1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel1.setText(AppLocal.getIntString("label.prodbarcode")); // NOI18N
@@ -246,10 +246,10 @@ public class ProductFilterSales extends javax.swing.JPanel implements EditorCrea
                 jBtnResetActionPerformed(evt);
             }
         });
-        add(jBtnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, -1, -1));
+        add(jBtnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 300, -1));
 
-        barcode.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        barcode.setMargin(new java.awt.Insets(4, 2, 2, 2));
+        barcode.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        barcode.setMargin(new java.awt.Insets(4, 4, 4, 4));
         barcode.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -259,7 +259,8 @@ public class ProductFilterSales extends javax.swing.JPanel implements EditorCrea
         });
         add(barcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, 300, 31));
 
-        name.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        name.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        name.setMargin(new java.awt.Insets(4, 4, 4, 4));
         name.setPreferredSize(new java.awt.Dimension(120, 30));
         add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 48, 300, -1));
     }// </editor-fold>//GEN-END:initComponents

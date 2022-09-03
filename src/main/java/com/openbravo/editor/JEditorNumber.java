@@ -192,7 +192,7 @@ public abstract class JEditorNumber extends JEditorAbstract {
      */
     @Override
     protected int getAlignment() {
-        return javax.swing.SwingConstants.RIGHT;
+        return javax.swing.SwingConstants.LEFT;
     }
     
     /**

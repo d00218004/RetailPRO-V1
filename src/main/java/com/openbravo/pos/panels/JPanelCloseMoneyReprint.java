@@ -343,7 +343,7 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
         jLabel11.setPreferredSize(new java.awt.Dimension(125, 30));
 
         m_jSequence.setEditable(false);
-        m_jSequence.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jSequence.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jSequence.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jSequence.setPreferredSize(new java.awt.Dimension(150, 30));
 
@@ -353,7 +353,7 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
         jLabel2.setPreferredSize(new java.awt.Dimension(125, 30));
 
         m_jMinDate.setEditable(false);
-        m_jMinDate.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jMinDate.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jMinDate.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jMinDate.setPreferredSize(new java.awt.Dimension(150, 30));
 
@@ -363,7 +363,7 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
         jLabel3.setPreferredSize(new java.awt.Dimension(150, 30));
 
         m_jMaxDate.setEditable(false);
-        m_jMaxDate.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jMaxDate.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jMaxDate.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jMaxDate.setPreferredSize(new java.awt.Dimension(200, 30));
 
@@ -407,7 +407,7 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
         jLabel1.setPreferredSize(new java.awt.Dimension(150, 30));
 
         m_jCount.setEditable(false);
-        m_jCount.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jCount.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jCount.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jCount.setPreferredSize(new java.awt.Dimension(200, 30));
 
@@ -416,7 +416,7 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
         jLabel5.setPreferredSize(new java.awt.Dimension(150, 30));
 
         m_jSales.setEditable(false);
-        m_jSales.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jSales.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jSales.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jSales.setPreferredSize(new java.awt.Dimension(200, 30));
 
@@ -425,7 +425,7 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
         jLabel6.setPreferredSize(new java.awt.Dimension(150, 30));
 
         m_jSalesSubtotal.setEditable(false);
-        m_jSalesSubtotal.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jSalesSubtotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jSalesSubtotal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jSalesSubtotal.setPreferredSize(new java.awt.Dimension(200, 30));
 
@@ -434,7 +434,7 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
         jLabel12.setPreferredSize(new java.awt.Dimension(150, 30));
 
         m_jSalesTaxes.setEditable(false);
-        m_jSalesTaxes.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jSalesTaxes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jSalesTaxes.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jSalesTaxes.setPreferredSize(new java.awt.Dimension(200, 30));
 
@@ -443,7 +443,7 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
         jLabel7.setPreferredSize(new java.awt.Dimension(150, 30));
 
         m_jSalesTotal.setEditable(false);
-        m_jSalesTotal.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jSalesTotal.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jSalesTotal.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jSalesTotal.setPreferredSize(new java.awt.Dimension(200, 30));
 
@@ -452,7 +452,7 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
         jLabel4.setPreferredSize(new java.awt.Dimension(150, 30));
 
         m_jCash.setEditable(false);
-        m_jCash.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jCash.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jCash.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jCash.setPreferredSize(new java.awt.Dimension(200, 30));
 
@@ -463,7 +463,7 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
         jLabel9.setPreferredSize(new java.awt.Dimension(150, 30));
 
         m_jLinesRemoved.setEditable(false);
-        m_jLinesRemoved.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jLinesRemoved.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jLinesRemoved.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jLinesRemoved.setPreferredSize(new java.awt.Dimension(200, 30));
 
@@ -473,11 +473,11 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
         jLabel8.setPreferredSize(new java.awt.Dimension(150, 30));
 
         m_jNoCashSales.setEditable(false);
-        m_jNoCashSales.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        m_jNoCashSales.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jNoCashSales.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         m_jNoCashSales.setPreferredSize(new java.awt.Dimension(200, 30));
 
-        m_jPrint.setBackground(new java.awt.Color(0, 128, 255));
+        m_jPrint.setBackground(new java.awt.Color(40, 167, 69));
         m_jPrint.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         m_jPrint.setForeground(new java.awt.Color(255, 255, 255));
         m_jPrint.setText(AppLocal.getIntString("button.print")); // NOI18N
@@ -485,8 +485,8 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
         m_jPrint.setIconTextGap(2);
         m_jPrint.setInheritsPopupMenu(true);
         m_jPrint.setMaximumSize(new java.awt.Dimension(85, 33));
-        m_jPrint.setMinimumSize(new java.awt.Dimension(85, 33));
-        m_jPrint.setPreferredSize(new java.awt.Dimension(145, 45));
+        m_jPrint.setMinimumSize(null);
+        m_jPrint.setPreferredSize(new java.awt.Dimension(80, 45));
         m_jPrint.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -495,10 +495,14 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new java.awt.Color(0, 128, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Search");
-        jButton1.setPreferredSize(new java.awt.Dimension(80, 30));
+        jButton1.setBorderPainted(false);
+        jButton1.setMaximumSize(null);
+        jButton1.setMinimumSize(null);
+        jButton1.setPreferredSize(new java.awt.Dimension(80, 45));
         jButton1.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
@@ -512,7 +516,7 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -550,8 +554,7 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(m_jCash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(m_jCash, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -566,7 +569,6 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(m_jPrint, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -575,19 +577,24 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(m_jSequence, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 0, 0))
+                            .addComponent(m_jSequence, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(m_jPrint, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(m_jPrint, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(m_jSequence, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(m_jSequence, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(8, 8, 8)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(m_jMinDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -595,7 +602,7 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(m_jScrollTableTicket, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(33, 33, 33)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(m_jScrollSales, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -635,9 +642,7 @@ public class JPanelCloseMoneyReprint extends JPanel implements JPanelView, BeanF
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(m_jNoCashSales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(m_jPrint, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);

@@ -372,6 +372,7 @@ public class JDialogNewCustomer extends javax.swing.JDialog {
 
         txtNotes.setColumns(20);
         txtNotes.setRows(5);
+        txtNotes.setPreferredSize(null);
         jScrollPane2.setViewportView(txtNotes);
 
         postal.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -435,7 +436,7 @@ public class JDialogNewCustomer extends javax.swing.JDialog {
                                 .addComponent(jLblDiscountpercent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtMaxdebt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(m_jVip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2))))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addGap(15, 15, 15))
         );
         jPanel3Layout.setVerticalGroup(

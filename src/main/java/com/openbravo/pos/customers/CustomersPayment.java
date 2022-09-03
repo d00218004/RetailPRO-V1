@@ -61,12 +61,10 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
 
         initComponents();
         
-        editorcard.addEditorKeys(m_jKeys);
-        txtNotes.addEditorKeys(m_jKeys);
+        m_jTicketEditor.addEditorKeys(m_jKeys);
         txtPrePay.addEditorKeys(m_jKeys);
 
         dirty = new DirtyManager();
-        txtNotes.addPropertyChangeListener("Text", dirty);
         txtPrePay.addPropertyChangeListener("Number", dirty);
     }
 
@@ -115,8 +113,8 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
 
         resetCustomer();
 
-        editorcard.reset();
-        editorcard.activate();
+        m_jTicketEditor.reset();
+        m_jTicketEditor.activate();
     }
 
     /**
@@ -158,7 +156,7 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         txtTaxId.setText(customer.getTaxid());
         txtName.setText(customer.getName());
         txtCard.setText(customer.getCard());
-        txtNotes.reset();
+        txtNotes.setText("");
         txtNotes.setText(customer.getNotes());
         txtMaxdebt.setText(Formats.CURRENCY.formatValue(customer.getMaxdebt()));
         txtCurdebt.setText(Formats.CURRENCY.formatValue(customer.getAccdebt()));
@@ -185,7 +183,7 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         txtTaxId.setText(null);
         txtName.setText(null);
         txtCard.setText(null);
-        txtNotes.reset();
+        txtNotes.setText("");
         txtMaxdebt.setText(null);
         txtCurdebt.setText(null);
         txtCurdate.setText(null);
@@ -205,7 +203,7 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
     private void readCustomer() {
 
         try {
-            CustomerInfoExt customer = dlsales.findCustomerExt(editorcard.getText());
+            CustomerInfoExt customer = dlsales.findCustomerExt(m_jTicketEditor.getText());
             if (customer == null) {
                 MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"));
                 msg.show(this);
@@ -218,8 +216,8 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
             msg.show(this);
         }
 
-        editorcard.reset();
-        editorcard.activate();
+        m_jTicketEditor.reset();
+        m_jTicketEditor.activate();
     }
 
     private void save() {
@@ -265,21 +263,13 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents()
     {
-        java.awt.GridBagConstraints gridBagConstraints;
 
-        jPanel2 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        btnCustomer = new javax.swing.JButton();
-        btnPay = new javax.swing.JButton();
-        btnPrePay = new javax.swing.JButton();
-        btnSave = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        m_jKeys = new com.openbravo.editor.JEditorKeys();
         jPanel5 = new javax.swing.JPanel();
-        editorcard = new com.openbravo.editor.JEditorString();
+        m_jTicketEditor = new com.openbravo.editor.JEditorIntegerPositive();
         jButton1 = new javax.swing.JButton();
+        m_jKeys = new com.openbravo.editor.JEditorKeys();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -296,118 +286,27 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         txtTaxId = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        txtNotes = new com.openbravo.editor.JEditorString();
+        btnSave = new javax.swing.JButton();
+        btnPrePay = new javax.swing.JButton();
+        btnPay = new javax.swing.JButton();
+        btnCustomer = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtNotes = new javax.swing.JTextArea();
 
         setLayout(new java.awt.BorderLayout());
 
-        jPanel2.setLayout(new java.awt.BorderLayout());
-
-        btnCustomer.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/customer_sml.png"))); // NOI18N
-        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages"); // NOI18N
-        btnCustomer.setToolTipText(bundle.getString("tooltip.customerpay.customer")); // NOI18N
-        btnCustomer.setFocusPainted(false);
-        btnCustomer.setFocusable(false);
-        btnCustomer.setMargin(new java.awt.Insets(8, 14, 8, 14));
-        btnCustomer.setPreferredSize(new java.awt.Dimension(110, 45));
-        btnCustomer.setRequestFocusEnabled(false);
-        btnCustomer.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnCustomerActionPerformed(evt);
-            }
-        });
-        jPanel6.add(btnCustomer);
-
-        btnPay.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnPay.setText(AppLocal.getIntString("button.pay")); // NOI18N
-        btnPay.setToolTipText(bundle.getString("tooltip.customerpay.pay")); // NOI18N
-        btnPay.setFocusPainted(false);
-        btnPay.setFocusable(false);
-        btnPay.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        btnPay.setMaximumSize(new java.awt.Dimension(110, 44));
-        btnPay.setMinimumSize(new java.awt.Dimension(110, 44));
-        btnPay.setPreferredSize(new java.awt.Dimension(110, 45));
-        btnPay.setRequestFocusEnabled(false);
-        btnPay.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnPayActionPerformed(evt);
-            }
-        });
-        jPanel6.add(btnPay);
-
-        btnPrePay.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnPrePay.setText(AppLocal.getIntString("button.prepay")); // NOI18N
-        btnPrePay.setToolTipText(bundle.getString("tooltip.prepay")); // NOI18N
-        btnPrePay.setFocusPainted(false);
-        btnPrePay.setFocusable(false);
-        btnPrePay.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        btnPrePay.setMaximumSize(new java.awt.Dimension(110, 44));
-        btnPrePay.setMinimumSize(new java.awt.Dimension(110, 44));
-        btnPrePay.setPreferredSize(new java.awt.Dimension(110, 45));
-        btnPrePay.setRequestFocusEnabled(false);
-        btnPrePay.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnPrePayActionPerformed(evt);
-            }
-        });
-        jPanel6.add(btnPrePay);
-
-        btnSave.setBackground(new java.awt.Color(40, 167, 69));
-        btnSave.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnSave.setForeground(new java.awt.Color(255, 255, 255));
-        btnSave.setText("Save");
-        btnSave.setToolTipText(bundle.getString("tootltip.save")); // NOI18N
-        btnSave.setBorderPainted(false);
-        btnSave.setFocusPainted(false);
-        btnSave.setFocusable(false);
-        btnSave.setMargin(new java.awt.Insets(8, 14, 8, 14));
-        btnSave.setPreferredSize(new java.awt.Dimension(110, 45));
-        btnSave.setRequestFocusEnabled(false);
-        btnSave.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                btnSaveActionPerformed(evt);
-            }
-        });
-        jPanel6.add(btnSave);
-        jPanel6.add(jSeparator1);
-
-        jPanel2.add(jPanel6, java.awt.BorderLayout.LINE_START);
-
-        add(jPanel2, java.awt.BorderLayout.PAGE_START);
-
-        jPanel3.setLayout(new java.awt.BorderLayout());
-
         jPanel4.setLayout(new javax.swing.BoxLayout(jPanel4, javax.swing.BoxLayout.Y_AXIS));
 
-        m_jKeys.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                m_jKeysActionPerformed(evt);
-            }
-        });
-        jPanel4.add(m_jKeys);
-
         jPanel5.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        jPanel5.setLayout(new java.awt.GridBagLayout());
 
-        editorcard.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        editorcard.setPreferredSize(new java.awt.Dimension(200, 45));
-        jPanel5.add(editorcard, new java.awt.GridBagConstraints());
+        m_jTicketEditor.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        m_jTicketEditor.setPreferredSize(new java.awt.Dimension(200, 45));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/ok.png"))); // NOI18N
         jButton1.setFocusPainted(false);
         jButton1.setFocusable(false);
         jButton1.setMargin(new java.awt.Insets(8, 14, 8, 14));
-        jButton1.setPreferredSize(new java.awt.Dimension(110, 45));
+        jButton1.setPreferredSize(null);
         jButton1.setRequestFocusEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener()
         {
@@ -416,18 +315,53 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
                 jButton1ActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 0);
-        jPanel5.add(jButton1, gridBagConstraints);
+
+        m_jKeys.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                m_jKeysActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(m_jTicketEditor, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(m_jKeys, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(8, 8, 8)
+                .addComponent(m_jKeys, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(m_jTicketEditor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
 
         jPanel4.add(jPanel5);
 
-        jPanel3.add(jPanel4, java.awt.BorderLayout.NORTH);
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         add(jPanel3, java.awt.BorderLayout.LINE_END);
 
@@ -444,61 +378,69 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         jLabel5.setPreferredSize(new java.awt.Dimension(150, 30));
 
         txtCard.setEditable(false);
-        txtCard.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtCard.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtCard.setFocusable(false);
         txtCard.setPreferredSize(new java.awt.Dimension(0, 30));
         txtCard.setRequestFocusEnabled(false);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setText(AppLocal.getIntString("label.maxdebt")); // NOI18N
-        jLabel1.setPreferredSize(new java.awt.Dimension(120, 30));
+        jLabel1.setPreferredSize(new java.awt.Dimension(120, 20));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText(AppLocal.getIntString("label.curdebt")); // NOI18N
-        jLabel2.setPreferredSize(new java.awt.Dimension(120, 30));
+        jLabel2.setPreferredSize(new java.awt.Dimension(120, 20));
 
         txtCurdebt.setEditable(false);
-        txtCurdebt.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtCurdebt.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtCurdebt.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtCurdebt.setFocusable(false);
         txtCurdebt.setPreferredSize(new java.awt.Dimension(120, 30));
         txtCurdebt.setRequestFocusEnabled(false);
+        txtCurdebt.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                txtCurdebtActionPerformed(evt);
+            }
+        });
 
         txtCurdate.setEditable(false);
-        txtCurdate.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtCurdate.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtCurdate.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtCurdate.setFocusable(false);
         txtCurdate.setPreferredSize(new java.awt.Dimension(120, 30));
         txtCurdate.setRequestFocusEnabled(false);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel6.setText(AppLocal.getIntString("label.curdate")); // NOI18N
-        jLabel6.setPreferredSize(new java.awt.Dimension(120, 30));
+        jLabel6.setPreferredSize(new java.awt.Dimension(120, 20));
 
         txtName.setEditable(false);
-        txtName.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtName.setFocusable(false);
         txtName.setPreferredSize(new java.awt.Dimension(0, 30));
         txtName.setRequestFocusEnabled(false);
 
         txtMaxdebt.setEditable(false);
-        txtMaxdebt.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtMaxdebt.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtMaxdebt.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         txtMaxdebt.setFocusable(false);
         txtMaxdebt.setPreferredSize(new java.awt.Dimension(120, 30));
         txtMaxdebt.setRequestFocusEnabled(false);
 
         txtPrePay.setForeground(new java.awt.Color(0, 204, 255));
+        java.util.ResourceBundle bundle = java.util.ResourceBundle.getBundle("pos_messages"); // NOI18N
         txtPrePay.setToolTipText(bundle.getString("tooltip.customerpay.prepay")); // NOI18N
         txtPrePay.setEnabled(false);
-        txtPrePay.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        txtPrePay.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         txtPrePay.setPreferredSize(new java.awt.Dimension(200, 30));
 
         txtTaxId.setEditable(false);
-        txtTaxId.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtTaxId.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txtTaxId.setFocusable(false);
         txtTaxId.setPreferredSize(new java.awt.Dimension(150, 30));
         txtTaxId.setRequestFocusEnabled(false);
@@ -511,17 +453,92 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         jLabel4.setText(AppLocal.getIntString("label.prepay")); // NOI18N
         jLabel4.setPreferredSize(new java.awt.Dimension(120, 30));
 
-        txtNotes.setToolTipText(bundle.getString("tooltip.customerpay.notes")); // NOI18N
-        txtNotes.setEnabled(false);
-        txtNotes.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtNotes.setPreferredSize(new java.awt.Dimension(260, 100));
+        btnSave.setBackground(new java.awt.Color(40, 167, 69));
+        btnSave.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnSave.setForeground(new java.awt.Color(255, 255, 255));
+        btnSave.setText("Save");
+        btnSave.setToolTipText(bundle.getString("tootltip.save")); // NOI18N
+        btnSave.setBorderPainted(false);
+        btnSave.setFocusPainted(false);
+        btnSave.setFocusable(false);
+        btnSave.setMargin(new java.awt.Insets(3, 3, 3, 3));
+        btnSave.setPreferredSize(new java.awt.Dimension(90, 45));
+        btnSave.setRequestFocusEnabled(false);
+        btnSave.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnSaveActionPerformed(evt);
+            }
+        });
+
+        btnPrePay.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnPrePay.setText("<html><center>Prepay\nAccount</center>\n</html>\n");
+        btnPrePay.setToolTipText(bundle.getString("tooltip.prepay")); // NOI18N
+        btnPrePay.setFocusPainted(false);
+        btnPrePay.setFocusable(false);
+        btnPrePay.setMargin(new java.awt.Insets(3, 3, 3, 3));
+        btnPrePay.setMaximumSize(new java.awt.Dimension(110, 44));
+        btnPrePay.setMinimumSize(new java.awt.Dimension(110, 44));
+        btnPrePay.setPreferredSize(new java.awt.Dimension(90, 45));
+        btnPrePay.setRequestFocusEnabled(false);
+        btnPrePay.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnPrePayActionPerformed(evt);
+            }
+        });
+
+        btnPay.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnPay.setText("<html><center>Account\nPayment</center></html>");
+        btnPay.setToolTipText(bundle.getString("tooltip.customerpay.pay")); // NOI18N
+        btnPay.setFocusPainted(false);
+        btnPay.setFocusable(false);
+        btnPay.setMargin(new java.awt.Insets(3, 3, 3, 3));
+        btnPay.setMaximumSize(new java.awt.Dimension(110, 44));
+        btnPay.setMinimumSize(new java.awt.Dimension(110, 44));
+        btnPay.setPreferredSize(new java.awt.Dimension(90, 45));
+        btnPay.setRequestFocusEnabled(false);
+        btnPay.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnPayActionPerformed(evt);
+            }
+        });
+
+        btnCustomer.setBackground(new java.awt.Color(0, 128, 255));
+        btnCustomer.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        btnCustomer.setForeground(new java.awt.Color(255, 255, 255));
+        btnCustomer.setText("<html><center>Find\nClub Account</center></html>");
+        btnCustomer.setToolTipText(bundle.getString("tooltip.customerpay.customer")); // NOI18N
+        btnCustomer.setBorderPainted(false);
+        btnCustomer.setFocusPainted(false);
+        btnCustomer.setFocusable(false);
+        btnCustomer.setMargin(new java.awt.Insets(3, 3, 3, 3));
+        btnCustomer.setPreferredSize(new java.awt.Dimension(90, 45));
+        btnCustomer.setRequestFocusEnabled(false);
+        btnCustomer.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                btnCustomerActionPerformed(evt);
+            }
+        });
+
+        txtNotes.setColumns(20);
+        txtNotes.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txtNotes.setLineWrap(true);
+        txtNotes.setRows(5);
+        jScrollPane2.setViewportView(txtNotes);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -538,35 +555,52 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCurdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtNotes, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
-                                    .addComponent(txtPrePay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtTaxId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtPrePay, javax.swing.GroupLayout.DEFAULT_SIZE, 270, Short.MAX_VALUE)
+                                        .addComponent(jScrollPane2)))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnPay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnPrePay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txtCard, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addComponent(txtCard, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(txtName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(txtTaxId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addContainerGap(69, Short.MAX_VALUE)))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPrePay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtTaxId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -579,10 +613,13 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtNotes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(76, 76, 76))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPrePay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -596,7 +633,7 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
                     .addComponent(txtCurdebt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtMaxdebt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCurdate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
@@ -608,36 +645,112 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
         
     }//GEN-LAST:event_m_jKeysActionPerformed
 
-    private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
+    {//GEN-HEADEREND:event_jButton1ActionPerformed
 
-        JCustomerFinder finder = JCustomerFinder.getCustomerFinder(this, dlcustomers);
-        finder.search(null);
-        finder.setVisible(true);
-        CustomerInfo customer = finder.getSelectedCustomer();
-        if (customer != null) {
-            try {
-                CustomerInfoExt c = dlsales.loadCustomerExt(customer.getId());
-                if (c == null) {
-                    MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"));
-                    msg.show(this);
-                } else {
-                    editCustomer(c);
+        readCustomer();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtCurdebtActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_txtCurdebtActionPerformed
+    {//GEN-HEADEREND:event_txtCurdebtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCurdebtActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnSaveActionPerformed
+    {//GEN-HEADEREND:event_btnSaveActionPerformed
+
+        if (dirty.isDirty())
+        {
+            save();
+
+            m_jTicketEditor.reset();
+            m_jTicketEditor.activate();
+        }
+
+    }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnPrePayActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnPrePayActionPerformed
+    {//GEN-HEADEREND:event_btnPrePayActionPerformed
+
+        txtPrePay.setFocusable(true);
+        txtPrePay.requestFocusInWindow();
+
+        if (txtPrePay.getText() != null)
+        {
+            double prepay = Double.parseDouble(txtPrePay.getText());
+            Formats.CURRENCY.formatValue(RoundUtils.getValue(prepay));
+            paymentdialog.setPrintSelected(true);
+
+            if (paymentdialog.showDialog(prepay, null))
+            {
+
+                TicketInfo ticket = new TicketInfo();
+                ticket.setTicketType(TicketInfo.RECEIPT_PAYMENT);
+                List<PaymentInfo> payments = paymentdialog.getSelectedPayments();
+
+                double total = 0.0;
+                for (PaymentInfo p : payments)
+                {
+                    total += p.getTotal();
                 }
-            } catch (BasicException ex) {
-                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"), ex);
-                msg.show(this);
-            }
-        }  
-        editorcard.reset();
-        editorcard.activate();
-                
-}//GEN-LAST:event_btnCustomerActionPerformed
 
-    private void btnPayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPayActionPerformed
+                total = Double.parseDouble(txtPrePay.getText());
+
+                payments.add(new PaymentInfoTicket(-total, "debtpaid"));
+
+                ticket.setPayments(payments);
+
+                ticket.setUser(app.getAppUserView().getUser().getUserInfo());
+                ticket.setActiveCash(app.getActiveCashIndex());
+                ticket.setDate(new Date());
+                ticket.setCustomer(customerext);
+
+                try
+                {
+                    dlsales.saveTicket(ticket, app.getInventoryLocation());
+                } catch (BasicException eData)
+                {
+                    MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.nosaveticket"), eData);
+                    msg.show(this);
+                }
+
+                CustomerInfoExt c;
+                try
+                {
+                    c = dlsales.loadCustomerExt(customerext.getId());
+                    if (c == null)
+                    {
+                        MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"));
+                        msg.show(this);
+                    } else
+                    {
+                        editCustomer(c);
+                    }
+                } catch (BasicException ex)
+                {
+                    c = null;
+                    MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"), ex);
+                    msg.show(this);
+                }
+
+                printTicket(paymentdialog.isPrintSelected()
+                    ? "Printer.CustomerPaid"
+                    : "Printer.CustomerPaid2",
+                    ticket, c);
+            }
+
+            m_jTicketEditor.reset();
+            m_jTicketEditor.activate();
+        }
+    }//GEN-LAST:event_btnPrePayActionPerformed
+
+    private void btnPayActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnPayActionPerformed
+    {//GEN-HEADEREND:event_btnPayActionPerformed
 
         paymentdialog.setPrintSelected(true);
-        
-        if (paymentdialog.showDialog(customerext.getAccdebt(), null)) {
+
+        if (paymentdialog.showDialog(customerext.getAccdebt(), null))
+        {
 
             // Save the ticket
             TicketInfo ticket = new TicketInfo();
@@ -646,7 +759,8 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
             List<PaymentInfo> payments = paymentdialog.getSelectedPayments();
 
             double total = 0.0;
-            for (PaymentInfo p : payments) {
+            for (PaymentInfo p : payments)
+            {
                 total += p.getTotal();
             }
 
@@ -659,129 +773,82 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
             ticket.setDate(new Date());
             ticket.setCustomer(customerext);
 
-            try {
+            try
+            {
                 dlsales.saveTicket(ticket, app.getInventoryLocation());
-            } catch (BasicException eData) {
+            } catch (BasicException eData)
+            {
                 MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.nosaveticket"), eData);
                 msg.show(this);
             }
 
-
             // reload customer
             CustomerInfoExt c;
-            try {
+            try
+            {
                 c = dlsales.loadCustomerExt(customerext.getId());
-                if (c == null) {
+                if (c == null)
+                {
                     MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"));
                     msg.show(this);
-                } else {
+                } else
+                {
                     editCustomer(c);
                 }
-            } catch (BasicException ex) {
+            } catch (BasicException ex)
+            {
                 c = null;
                 MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"), ex);
                 msg.show(this);
             }
 
             printTicket(paymentdialog.isPrintSelected()
-                    ? "Printer.CustomerPaid"
-                    : "Printer.CustomerPaid2",
-                    ticket, c);
+                ? "Printer.CustomerPaid"
+                : "Printer.CustomerPaid2",
+                ticket, c);
         }
-        
-        editorcard.reset();
-        editorcard.activate();
-        
-}//GEN-LAST:event_btnPayActionPerformed
 
-    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        m_jTicketEditor.reset();
+        m_jTicketEditor.activate();
 
-        if (dirty.isDirty()) {
-            save();
+    }//GEN-LAST:event_btnPayActionPerformed
 
-            editorcard.reset();
-            editorcard.activate();
-        }
-        
-}//GEN-LAST:event_btnSaveActionPerformed
+    private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnCustomerActionPerformed
+    {//GEN-HEADEREND:event_btnCustomerActionPerformed
 
-    private void btnPrePayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrePayActionPerformed
-
-        txtPrePay.setFocusable(true);
-        txtPrePay.requestFocusInWindow();
-
-        if (txtPrePay.getText() != null) {
-            double prepay = Double.parseDouble(txtPrePay.getText());        
-            Formats.CURRENCY.formatValue(RoundUtils.getValue(prepay));
-            paymentdialog.setPrintSelected(true);
-        
-            if (paymentdialog.showDialog(prepay, null)) {            
-           
-                TicketInfo ticket = new TicketInfo();
-                ticket.setTicketType(TicketInfo.RECEIPT_PAYMENT);
-                List<PaymentInfo> payments = paymentdialog.getSelectedPayments();
-
-                double total = 0.0;
-                for (PaymentInfo p : payments) {
-                    total += p.getTotal();
-                }
-             
-                total = Double.parseDouble(txtPrePay.getText());
-
-                payments.add(new PaymentInfoTicket(-total, "debtpaid"));
-
-                ticket.setPayments(payments);
-
-                ticket.setUser(app.getAppUserView().getUser().getUserInfo());
-                ticket.setActiveCash(app.getActiveCashIndex());
-                ticket.setDate(new Date());
-                ticket.setCustomer(customerext);
-
-                try {
-                    dlsales.saveTicket(ticket, app.getInventoryLocation());
-                } catch (BasicException eData) {
-                    MessageInf msg = new MessageInf(MessageInf.SGN_NOTICE, AppLocal.getIntString("message.nosaveticket"), eData);
+        JCustomerFinder finder = JCustomerFinder.getCustomerFinder(this, dlcustomers);
+        finder.search(null);
+        finder.setVisible(true);
+        CustomerInfo customer = finder.getSelectedCustomer();
+        if (customer != null)
+        {
+            try
+            {
+                CustomerInfoExt c = dlsales.loadCustomerExt(customer.getId());
+                if (c == null)
+                {
+                    MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"));
                     msg.show(this);
+                } else
+                {
+                    editCustomer(c);
                 }
-
-                CustomerInfoExt c;
-                try {
-                    c = dlsales.loadCustomerExt(customerext.getId());
-                    if (c == null) {
-                        MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"));
-                        msg.show(this);
-                    } else {
-                        editCustomer(c);
-                    }
-                } catch (BasicException ex) {
-                    c = null;
-                    MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"), ex);
-                    msg.show(this);
-                }
-
-                printTicket(paymentdialog.isPrintSelected()
-                    ? "Printer.CustomerPaid"
-                    : "Printer.CustomerPaid2",
-                    ticket, c);
+            } catch (BasicException ex)
+            {
+                MessageInf msg = new MessageInf(MessageInf.SGN_WARNING, AppLocal.getIntString("message.cannotfindcustomer"), ex);
+                msg.show(this);
             }
-        
-            editorcard.reset();
-            editorcard.activate();
         }
-    }//GEN-LAST:event_btnPrePayActionPerformed
+        m_jTicketEditor.reset();
+        m_jTicketEditor.activate();
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton1ActionPerformed
-    {//GEN-HEADEREND:event_jButton1ActionPerformed
-
-        readCustomer();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnCustomerActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCustomer;
     private javax.swing.JButton btnPay;
     private javax.swing.JButton btnPrePay;
     private javax.swing.JButton btnSave;
-    private com.openbravo.editor.JEditorString editorcard;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
@@ -792,19 +859,18 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JScrollPane jScrollPane2;
     private com.openbravo.editor.JEditorKeys m_jKeys;
+    private com.openbravo.editor.JEditorIntegerPositive m_jTicketEditor;
     private javax.swing.JTextField txtCard;
     private javax.swing.JTextField txtCurdate;
     private javax.swing.JTextField txtCurdebt;
     private javax.swing.JTextField txtMaxdebt;
     private javax.swing.JTextField txtName;
-    private com.openbravo.editor.JEditorString txtNotes;
+    private javax.swing.JTextArea txtNotes;
     private com.openbravo.editor.JEditorString txtPrePay;
     private javax.swing.JTextField txtTaxId;
     // End of variables declaration//GEN-END:variables
